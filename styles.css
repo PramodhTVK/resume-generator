@@ -37,3 +37,42 @@ button{
     cursor: pointer;
     font-family: inherit;
 }
+
+img{
+    width: 100%;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*fonts*/
+.font-poppins{font-family: var(--font-poppins);}
+.font-manrope{font-family: var(--font-manrope);}
+
+/*text-colors*/
+.text-blue{color: var(--clr-blue);}
+.text-blue-mid{color: var(--clr-blue-mid);}
+.text-blue-dark{color: var(--clr-blue-dark);}
+.text-bright{color: var(--clr-bright);}
+.text-dark{color: var(--clr-dark);}
+.text-grey{color: var(--clr-grey);}
+.text-white{color: var(--clr-white);}
+
+/*bg-colors*/
+.bg-blue{background-color: var(--clr-blue);}
+.bg-blue-mid{background-color: var(--clr-blue-mid);}
+.bg-blue-dark{background-color: var(--clr-blue-dark);}
+.bg-bright{background-color: var(--clr-bright);}
+.bg-dark{background-color: var(--clr-dark);}
+.bg-grey{background-color: var(--clr-grey);}
+.bg-white{background-color: var(--clr-white);}
+.bg-black{background-color: var(--clr-black);}
+
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-uppercase{text-transform: uppercase;}
+.text-lowercase{text-transform: lowercase;}
+.text-capitalize{text-transform: capitalize;}

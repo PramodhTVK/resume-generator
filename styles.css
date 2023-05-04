@@ -169,6 +169,10 @@ a{
     border-color: var(--clr-blue);
 }
 
+.btn-group button:first-child, .btn-group a:first-child{
+    margin-right: 1rem!important;
+}
+
 .navbar{
     height: 80px;
     display: flex;
@@ -176,3 +180,42 @@ a{
     box-shadow: rgba(0,0,0,0.8) 0px 3px 8px;
 }
 
+.navbar .container{
+    width: 100%;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.8rem;
+}
+
+.navbar-brand-text{
+    color: var(--clr-dark);
+    font-weight: 600;
+}
+
+.navbar-brand-text span{
+    color: var(--clr-blue);
+}
+
+.navbar-brand-icon{
+    width: 25px;
+    margin-right: 6px;
+    opacity: 0.8;
+}
+
+.brand-and-toggler{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header{
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

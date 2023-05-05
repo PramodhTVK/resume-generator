@@ -262,3 +262,30 @@ a{
 .section-one .btn-group{
     margin-top: 2rem;
 }
+
+/*section two*/
+.section-two{
+    padding: 64px 0;
+}
+
+.section-two .section-items{
+    display: grid;
+    gap: 2rem;
+}
+
+.section-two .section-item{
+    max-width: 350px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-two .section-item-icon{
+    margin: 1rem 0;
+}
+
+.section-two .section-item-title{
+    color: var(--clr-blue-dark);
+    font-size: 1.4rem;
+    font-weight: 800;
+}

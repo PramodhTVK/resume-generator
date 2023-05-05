@@ -289,3 +289,16 @@ a{
     font-size: 1.4rem;
     font-weight: 800;
 }
+
+.section-two .text{
+    margin: 0.9rem 0;
+}
+
+.footer{
+    padding: 3rem 0;
+}
+
+.footer-content{
+    color: var(--clr-grey);
+}
+

@@ -302,3 +302,11 @@ a{
     color: var(--clr-grey);
 }
 
+/*media queries*/
+@media screen and (min-width: 768px){
+    .section-one-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+}

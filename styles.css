@@ -239,4 +239,26 @@ a{
 }
 
 /*section one*/
+.section-one{
+    padding: 64px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
 
+.section-one-l img{
+    max-width: 545px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section-one-r{
+    max-width: 545px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4rem;
+}
+
+.section-one .btn-group{
+    margin-top: 2rem;
+}

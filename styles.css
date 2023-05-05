@@ -219,3 +219,24 @@ a{
     align-items: center;
     justify-content: center;
 }
+
+.header-content{
+    max-width: 740px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.lg-title{
+    margin: 1.4rem 0;
+    font-size: 37px;
+    line-height: 1.4;
+    color: var(--clr-dark);
+}
+
+.header-content p{
+    margin-bottom: 2.6rem;
+    line-height: 1.6;
+}
+
+/*section one*/
+

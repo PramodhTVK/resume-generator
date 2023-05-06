@@ -284,6 +284,12 @@ a{
     margin: 1rem 0;
 }
 
+.section-two .section-item-icon img{
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .section-two .section-item-title{
     color: var(--clr-blue-dark);
     font-size: 1.4rem;
@@ -314,5 +320,17 @@ a{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 3rem;
+    }
+    .section-one-r{
+        text-align: left;
+    }
+    .section-two .section-items{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .section-two .section-item{
+        text-align: left;
+    }
+    .section-two .section-item-icon img{
+        margin-left: 0;
     }
 }

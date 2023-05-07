@@ -90,11 +90,47 @@
                                 </div>
 
                                 <div class="form-elem">
-                                    <label for="" class="form-label">Description</label>
-                                    <input name="description" type="text" class="form-control description" id="" onkeyup="" placeholder="Description">
+                                    <label for="" class="form-label">Summary</label>
+                                    <input name="summary" type="text" class="form-control summary" id="" onkeyup="" placeholder="Summary">
                                     <span class="form-text"></span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="cv-form-blk">
+                        <div class="cv-form-row-title">
+                            <h3>achievements</h3>
+                        </div>
+
+                        <div class="row-seperator repeater">
+                            <div class="repeater" data-repeater-list="group-a">
+                                <div data-repeater-item>
+                                    <div class="cv-form-row cv-form-row-achievements">
+                                        <div class="cols-2">
+                                            <div class="form-elem">
+                                                <label for="" class="form-label">Title</label>
+                                                <input name="title" type="text" class="form-control title" id="" onkeyup="" placeholder="Title">
+                                                <span class="form-text"></span>
+                                            </div>
+
+                                            <!-- <div class="form-elem">
+                                                <label for="" class="form-label">Year</label>
+                                                <input name="year" type="text" class="form-control year" id="" onkeyup="" placeholder="Year">
+                                                <span class="form-text"></span>
+                                            </div> -->
+
+                                            <div class="form-elem">
+                                                <label for="" class="form-label">Description</label>
+                                                <input name="description" type="text" class="form-control description" id="" onkeyup="" placeholder="Description">
+                                                <span class="form-text"></span>
+                                            </div>
+                                        </div>
+                                        <button data-repeater-delete type="button" class="repeater-remove-btn">-</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" data-repeater-create value="Add" class="repeater-add-btn">+</button>
                         </div>
                     </div>
                 </form>

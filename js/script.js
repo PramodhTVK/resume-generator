@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('.repeater').repeater({
         initEmpty: false,
         defaultValues: {
-            'text-input': ''
+            'text-input': 'John jsjsjjsjDoe',
         },
         show:function(){
             $(this).slideDown();
@@ -17,3 +17,4 @@ $(document).ready(function(){
         isFirstItemUndeletable: true
     })
 })
+

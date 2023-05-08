@@ -2,9 +2,6 @@
 $(document).ready(function(){
     $('.repeater').repeater({
         initEmpty: false,
-        defaultValues: {
-            'text-input': 'John jsjsjjsjDoe',
-        },
         show:function(){
             $(this).slideDown();
         },

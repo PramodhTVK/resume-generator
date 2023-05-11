@@ -354,5 +354,40 @@ a{
     font-size: 1.7rem;         
 }
 .cv-form-blk{
-    max-width: auto     ;
+    max-width: 3rem 0;
+}
+
+.cv-form-row{
+    padding: 3rem 2rem 2rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+textarea{
+    resize: none;
+}
+
+.form-elem{
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.form-label{
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--clr-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-control{
+    border-radius: none;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-size: 14px;
+    padding: 0.8rem 1.6rem;
+    font-family: inherit;
+    width: 100%;
+    outline: 0;
+    transition: var(--transition);
 }

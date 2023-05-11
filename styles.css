@@ -391,3 +391,43 @@ textarea{
     outline: 0;
     transition: var(--transition);
 }
+
+.form-control:focus{
+    border-color: rgba(0,0,0,0.3);
+}
+
+.form-text{
+    color: #ca0500;
+    font-size: 12px;
+    position: absolute;
+    letter-spacing: 0.5px;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+}
+
+.cols-3, .cols-2{
+    display: grid;
+}
+
+.repeater-add-btn{
+    width: 25px;
+    height: 25px;
+    background-color: var(--clr-blue-mid);
+    font-size: 1.6rem;
+    color: var(--clr-white);
+    margin: 1rem 0;
+}
+
+.repeater-remove-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ca0500;
+    color: var(--clr-white);
+    font-size: 1.6rem;
+}

@@ -22,6 +22,7 @@
 }
 
 html{
+    scroll-behavior: smooth;
     font-size: 10px;
 }
 
@@ -430,4 +431,11 @@ textarea{
     background-color: #ca0500;
     color: var(--clr-white);
     font-size: 1.6rem;
+}
+
+.preview-cnt{
+    padding: 3rem 2rem 2rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+    position: relative;
 }

@@ -434,8 +434,17 @@ textarea{
 }
 
 .preview-cnt{
-    padding: 3rem 2rem 2rem;
-    border: 1px solid rgba(0,0,0,0.08);
-    margin-bottom: 1rem;
-    position: relative;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 32% auto;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    overflow: hidden;
+}
+
+.preview-cnt{
+    padding: 3rem 3rem 2rem 3rem;
+}
+
+.preview-cnt-l .preview-blk:nth-child(1){
+    text-align: center;
 }

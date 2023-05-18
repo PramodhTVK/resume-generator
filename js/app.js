@@ -16,11 +16,28 @@ let emailElem = mainForm.email;
 let phoneElem = mainForm.phoneno;
 let summaryElem = mainForm.summary;
 
+//first value is for the attributes and the second one passes the nodelist as the parameter
+const fetchValues = (attrs, ...nodeLists)=>{
+    let elemsAttrCount = nodeLists.length;
+    let elemsDataCount = nodeLists[0].length;
+    let tempDataArr = [];
+
+    //first loop deals with no of repeater values
+    for(let i=0; i<elemsDataCount; i++){
+        let tempObj = {};//create an empty object to fill the data
+        //second loop fetches the data for each repeater value or attribute
+        for(let j=0; j<elemsAttrCount; j++){
+            tempObj[attrs[j]] = nodeLists[j][i].value;
+        }
+        tempDataArr.push(tempObj);
+    }
+}
+
 const getUserInputs = () =>{
 
     let achievementTitleElem = document.querySelectorAll('.title');
     let achievementDescElem = document.querySelectorAll('.desc');
-    
+
 
     return {
         firstname: firstNameElem.value,

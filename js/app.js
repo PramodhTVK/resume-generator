@@ -38,9 +38,12 @@ const fetchValues = (attrs, ...nodeLists)=>{
 const getUserInputs = () =>{
 
     let achievementTitleElem = document.querySelectorAll('.title');
-    let achievementDescElem = document.querySelectorAll('.desc');
+    let achievementDescElem = document.querySelectorAll('.description');
 
+    let expTitleElem = document.querySelectorAll('.exp_title');
+    let expOrganisationElem = document.querySelectorAll
 
+    console.log(fetchValues(['title', 'description'], achievementTitleElem, achievementDescElem));
     return {
         firstname: firstNameElem.value,
         middlename: middleNameElem.value,

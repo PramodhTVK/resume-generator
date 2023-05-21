@@ -27,10 +27,12 @@ const fetchValues = (attrs, ...nodeLists)=>{
         let tempObj = {};//create an empty object to fill the data
         //second loop fetches the data for each repeater value or attribute
         for(let j=0; j<elemsAttrCount; j++){
-            tempObj[attrs[j]] = nodeLists[j][i].value;
+            //setting the key name as the attribute name and the value as the value of the attribute
+            tempObj[`${attrs[j]}`] = nodeLists[j][i].value;
         }
         tempDataArr.push(tempObj);
     }
+    return tempDataArr;
 }
 
 const getUserInputs = () =>{

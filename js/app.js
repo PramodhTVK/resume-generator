@@ -18,8 +18,10 @@ let summaryElem = mainForm.summary;
 
 //first value is for the attributes and the second one passes the nodelist as the parameter
 const fetchValues = (attrs, ...nodeLists)=>{
-    let elemsAttrCount = nodeLists.length;
+    let elemsAttrCount = nodeLists.length;//number of nodes in the current division
     let elemsDataCount = nodeLists[0].length;
+    //if previous no of number of nodes is n then after the usage of repeater the number of nodes becomes 2n so 2n is nodelists length
+    //since all the nodes in the nodelist are expected to be of the same length this works fine so basically this denotes the tota; number of nodes under each category this 
     let tempDataArr = [];
 
     //first loop deals with no of repeater values
@@ -41,9 +43,13 @@ const getUserInputs = () =>{
     let achievementDescElem = document.querySelectorAll('.description');
 
     let expTitleElem = document.querySelectorAll('.exp_title');
-    let expOrganisationElem = document.querySelectorAll
+    let expOrganisationElem = document.querySelectorAll('.exp_organization');
+    let expLocationElem = document.querySelectorAll('.exp_location');
+    let expStartDateElem = document.querySelectorAll('.exp_start_date');
+    let expEndDateElem = document.querySelectorAll('.exp_end_date');
+    let expDescElem = document.querySelectorAll('.exp_description');
 
-    console.log(fetchValues(['title', 'description'], achievementTitleElem, achievementDescElem));
+
     return {
         firstname: firstNameElem.value,
         middlename: middleNameElem.value,
@@ -54,6 +60,8 @@ const getUserInputs = () =>{
         email: emailElem.value,
         phoneno: phoneElem.value,
         summary: summaryElem.value,
+        achievements: fetchValues(['title', 'description'], achievementTitleElem, achievementDescElem),
+        experience: fetchValues(['exp_title', 'exp_organization', 'exp_location', 'exp_start_date', 'exp_end_date', 'exp_description'], expTitleElem, expOrganisationElem, expLocationElem, expStartDateElem, expEndDateElem, expDescElem)
     }
 }
 

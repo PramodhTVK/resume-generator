@@ -5,6 +5,14 @@ const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
 const digitRegex = /^\d+$/;
 
 const mainForm = document.getElementById('cv-form');
+const validType = {
+    TEXT: 'text',
+    TEXT_EMP: 'text_emp',
+    EMAIL: 'email',
+    PHONENO: 'phoneno',
+    DIGIT: 'digit',
+    ANY: 'any'
+}
 
 let firstNameElem = mainForm.firstname;
 let middleNameElem = mainForm.middlename;
@@ -56,6 +64,14 @@ const getUserInputs = () =>{
     eduGraduationDateElem = document.querySelectorAll('.edu_graduation_date'),
     eduDescriptionElem = document.querySelectorAll('.edu_description');
 
+    let projectTitleElem = document.querySelectorAll('.proj_title');
+    let projectLinkElem = document.querySelectorAll('.proj-link');
+    let projectDescElem = document.querySelectorAll('.proj_description');
+
+    let skillTitleElem = document.querySelectorAll('.skill');
+
+    //event listeners for form validation
+    firstNameElem
 
     return {
         firstname: firstNameElem.value,
@@ -68,8 +84,16 @@ const getUserInputs = () =>{
         phoneno: phoneElem.value,
         summary: summaryElem.value,
         achievements: fetchValues(['title', 'description'], achievementTitleElem, achievementDescElem),
-        experience: fetchValues(['exp_title', 'exp_organization', 'exp_location', 'exp_start_date', 'exp_end_date', 'exp_description'], expTitleElem, expOrganisationElem, expLocationElem, expStartDateElem, expEndDateElem, expDescElem)
+        experience: fetchValues(['exp_title', 'exp_organization', 'exp_location', 'exp_start_date', 'exp_end_date', 'exp_description'], expTitleElem, expOrganisationElem, expLocationElem, expStartDateElem, expEndDateElem, expDescElem),
+        education: fetchValues(['edu_school', 'edu_degree', 'edu_city', 'edu_start_date', 'edu_graduation_date', 'edu_description'], eduSchoolElem, eduDegreeElem, eduCityElem, eduStartDateElem, eduGraduationDateElem, eduDescriptionElem),
+        project: fetchValues(['proj_title', 'proj-link', 'proj_description'], projectTitleElem, projectLinkElem, projectDescElem),
+        skill: fetchValues(['skill'], skillTitleElem)
     }
+}
+
+function validateFormData(elem, elemType, elemName){
+    //checking for text and non empty string
+
 }
 
 const generateCV = () => {

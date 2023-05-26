@@ -49,6 +49,13 @@ const getUserInputs = () =>{
     let expEndDateElem = document.querySelectorAll('.exp_end_date');
     let expDescElem = document.querySelectorAll('.exp_description');
 
+    let eduSchoolElem = document.querySelectorAll('.edu_school'),
+    eduDegreeElem = document.querySelectorAll('.edu_degree'),
+    eduCityElem = document.querySelectorAll('.edu_city'),
+    eduStartDateElem = document.querySelectorAll('.edu_start_date'),
+    eduGraduationDateElem = document.querySelectorAll('.edu_graduation_date'),
+    eduDescriptionElem = document.querySelectorAll('.edu_description');
+
 
     return {
         firstname: firstNameElem.value,

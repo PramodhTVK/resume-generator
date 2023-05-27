@@ -54,7 +54,7 @@ const fetchValues = (attrs, ...nodeLists)=>{
         //second loop fetches the data for each repeater value or attribute
         for(let j=0; j<elemsAttrCount; j++){
             //setting the key name as the attribute name and the value as the value of the attribute
-            tempObj[`${attrs[j]}`] = nodeLists[j][i].value;
+            tempObj[`${attrs[j]}`] = nodeLists[j][i]?.value||"";
         }
         tempDataArr.push(tempObj);
     }
@@ -212,4 +212,20 @@ const generateCV = () => {
     let userData = getUserInputs();
     displayCV(userData);
 
+}
+
+function previewImg(){
+    let imgFile = new FileReader();
+    //creates a new insteance of FileReader object
+    imgFile.readAsDataURL(imageElem.files[0]);
+    //starts the first item selected from the fileList once finished the result attribute containes a dataURL representing file's data
+    imgFile.onload = function(e){
+        //this is called when imgFile is done loading
+        imageDisplayElem.src = e.target.result;
+        //assign the dataURL to src of the imageElement
+    }
+}
+
+function printCV(){
+    window.print();
 }

@@ -1,4 +1,4 @@
-const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters
+const strRegex =  /^[a-zA-Z\s]*$/; // containing only letters either lowercase or uppercase and accepts whitespaces as well 
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 /* supports following number formats - (123) 456-7890, (123)456-7890, 123-456-7890, 123.456.7890, 1234567890, +31636363634, 075-63546725 */
@@ -93,7 +93,40 @@ const getUserInputs = () =>{
 
 function validateFormData(elem, elemType, elemName){
     //checking for text and non empty string
+    if(elemType == validType.TEXT){
+        if(!strRegex.test(elem.value) || elem.value.trim().length == 0)addErrMsg(elem,elemName);
+        else removeErrMsg(elem);
+    }
 
+    if(elemType == validType.TEXT_EMP){
+        if(!strRegex.test(elem.value))addErrMsg(elem,elemName);
+        else removeErrMsg(elem);
+    }
+
+    if(elemType == validType.EMAIL){
+        if(!emailRegex.test(elem.value) || elem.value.trim().length == 0)addErrMsg(elem,elemName);
+        else removeErrMsg(elem);
+    }
+
+    if(elemType == validType.PHONENO){
+        if(!phoneRegex.test(elem.value) || elem.value.trim().length == 0)addErrMsg(elem,elemName);
+        else removeErrMsg(elem);
+    }
+
+    if(elemType == validType.ANY){
+        if(elem.value.trim().length == 0)addErrMsg(elem,elemName);
+        else removeErrMsg(elem);
+    }
+    
+
+}
+
+function addErrMsg(elem, elemName){
+    elem.nextElementSibling.innerHTML = `${elemName} is invalid`;
+}
+
+function removeErrMsg(elem){
+    elem.nextElementSibling.innerHTML = '';
 }
 
 const generateCV = () => {

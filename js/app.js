@@ -27,7 +27,7 @@ let phoneElem = mainForm.phoneno;
 let summaryElem = mainForm.summary;
 
 //display elements
-let nameDisplayElem = document.getElementById('name_dsp');
+let nameDisplayElem = document.getElementById('fullname_dsp');
 let imageDisplayElem = document.getElementById('image_dsp');
 let domainDisplayElem = document.getElementById('domain_dsp');
 let phoneNoDisplayElem = document.getElementById('phoneno_dsp');
@@ -129,8 +129,8 @@ const getUserInputs = () =>{
         achievements: fetchValues(['title', 'description'], achievementTitleElem, achievementDescElem),
         experience: fetchValues(['exp_title', 'exp_organization', 'exp_location', 'exp_start_date', 'exp_end_date', 'exp_description'], expTitleElem, expOrganisationElem, expLocationElem, expStartDateElem, expEndDateElem, expDescElem),
         education: fetchValues(['edu_school', 'edu_degree', 'edu_city', 'edu_start_date', 'edu_graduation_date', 'edu_description'], eduSchoolElem, eduDegreeElem, eduCityElem, eduStartDateElem, eduGraduationDateElem, eduDescriptionElem),
-        project: fetchValues(['proj_title', 'proj-link', 'proj_description'], projectTitleElem, projectLinkElem, projectDescElem),
-        skill: fetchValues(['skill'], skillTitleElem)
+        projects: fetchValues(['proj_title', 'proj-link', 'proj_description'], projectTitleElem, projectLinkElem, projectDescElem),
+        skills: fetchValues(['skill'], skillTitleElem)
     }
 }
 
@@ -185,7 +185,7 @@ const showListData = (listData , listContainer) => {
         for(let key in listItem){
             //for in loop loops over every property of the object.Since we pass in the object returned by getUserInputs() function this works perfectly fine
             let subItemElem = document.createElement('span');
-            subItemElem.classList.addz('preview-item-val');
+            subItemElem.classList.add('preview-item-val');
             subItemElem.innerHTML = `${listItem[key]}`;
             itemElem.appendChild(subItemElem);
         }
@@ -211,7 +211,7 @@ const displayCV = (userData) => {
 const generateCV = () => {
     let userData = getUserInputs();
     displayCV(userData);
-
+    console.log(userData);
 }
 
 function previewImg(){

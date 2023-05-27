@@ -71,7 +71,34 @@ const getUserInputs = () =>{
     let skillTitleElem = document.querySelectorAll('.skill');
 
     //event listeners for form validation
-    firstNameElem
+    firstNameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'First Name'));
+    middleNameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT_EMP, 'Middle Name'));
+    lastNameElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'Last Name'));
+    phoneElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.PHONENO, 'Phone Number'));
+    emailElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.EMAIL, 'Email'));
+    addressElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Address'));
+    designationElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'Designation'));
+
+    achievementTitleElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Title')));
+    achievementDescElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Description')));
+    expTitleElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Title')));
+    expOrganisationElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Organisation')));
+    expLocationElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Location')));
+    expStartDateElem.forEach((elem) => elem.addEventListener('blur', (e) => validateFormData(e.target, validType.ANY, 'Start Date')));
+    //blur because it makes no sense to use a keyup event for a date picker.So basically when the element loses focus or the user selects an other field this event will be fired and thus the callback function will be called
+    expEndDateElem.forEach((elem) => elem.addEventListener('blur', (e) => validateFormData(e.target, validType.ANY, 'End Date')));
+    expDescElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Description')));
+    eduSchoolElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'School')));
+    eduDegreeElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Degree')));
+    eduCityElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'City')));
+    eduStartDateElem.forEach((elem) => elem.addEventListener('blur', (e) => validateFormData(e.target, validType.ANY, 'Start Date')));
+    eduGraduationDateElem.forEach((elem) => elem.addEventListener('blur', (e) => validateFormData(e.target, validType.ANY, 'Graduation Date')));
+    eduDescriptionElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Description')));
+    projectTitleElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Title')));
+    projectLinkElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Link')));
+    projectDescElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Description')));
+    skillTitleElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Skill')));
+    
 
     return {
         firstname: firstNameElem.value,
@@ -123,6 +150,7 @@ function validateFormData(elem, elemType, elemName){
 
 function addErrMsg(elem, elemName){
     elem.nextElementSibling.innerHTML = `${elemName} is invalid`;
+    //nextElementSibling because every label has a parent div form-elem and the label name is pretty much the classname.So immediately after the label name we gotta span that is meant to display the error msg
 }
 
 function removeErrMsg(elem){

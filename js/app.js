@@ -14,6 +14,8 @@ const validType = {
     ANY: 'any'
 }
 
+
+//user inputs
 let firstNameElem = mainForm.firstname;
 let middleNameElem = mainForm.middlename;
 let lastNameElem = mainForm.lastname;
@@ -23,6 +25,20 @@ let addressElem = mainForm.address;
 let emailElem = mainForm.email;
 let phoneElem = mainForm.phoneno;
 let summaryElem = mainForm.summary;
+
+//display elements
+let nameDisplayElem = document.getElementById('name_dsp');
+let imageDisplayElem = document.getElementById('image_dsp');
+let domainDisplayElem = document.getElementById('domain_dsp');
+let phoneNoDisplayElem = document.getElementById('phoneno_dsp');
+let emailDisplayElem = document.getElementById('email_dsp');
+let addressDisplayElem = document.getElementById('address_dsp');
+let summaryDisplayElem = document.getElementById('summary_dsp');
+let skillsDisplayElem = document.getElementById('skills_dsp');
+let achievementsDisplayElem = document.getElementById('achievements_dsp');
+let educationDisplayElem = document.getElementById('education_dsp');
+let experienceDisplayElem = document.getElementById('experience_dsp');
+let projectsDisplayElem = document.getElementById('projects_dsp');
 
 //first value is for the attributes and the second one passes the nodelist as the parameter
 const fetchValues = (attrs, ...nodeLists)=>{
@@ -77,7 +93,7 @@ const getUserInputs = () =>{
     phoneElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.PHONENO, 'Phone Number'));
     emailElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.EMAIL, 'Email'));
     addressElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Address'));
-    designationElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'Designation'));
+    domainElem.addEventListener('keyup', (e) => validateFormData(e.target, validType.TEXT, 'Designation'));
 
     achievementTitleElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Title')));
     achievementDescElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Description')));
@@ -98,7 +114,7 @@ const getUserInputs = () =>{
     projectLinkElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Link')));
     projectDescElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Description')));
     skillTitleElem.forEach((elem) => elem.addEventListener('keyup', (e) => validateFormData(e.target, validType.ANY, 'Skill')));
-    
+
 
     return {
         firstname: firstNameElem.value,
@@ -157,7 +173,43 @@ function removeErrMsg(elem){
     elem.nextElementSibling.innerHTML = '';
 }
 
+const showListData = (listData , listContainer) => {
+    listContainer.innerHTML = '';
+    //reset the container provides a clean state
+    listData.forEach(listItem => {
+        let itemElem = document.createElement('div');
+        //for every list item we create a div element
+        itemElem.classList.add('preview-item');
+        //add the css class
+
+        for(let key in listItem){
+            //for in loop loops over every property of the object.Since we pass in the object returned by getUserInputs() function this works perfectly fine
+            let subItemElem = document.createElement('span');
+            subItemElem.classList.addz('preview-item-val');
+            subItemElem.innerHTML = `${listItem[key]}`;
+            itemElem.appendChild(subItemElem);
+        }
+        listContainer.appendChild(itemElem);
+        //finally append this to the listContainer referenced by the id attribute eg project_dsp
+    })
+}
+
+
+const displayCV = (userData) => {
+    nameDisplayElem.innerHTML = `${userData.firstname} ${userData.middlename} ${userData.lastname}`;
+    phoneNoDisplayElem.innerHTML = userData.phoneno;
+    emailDisplayElem.innerHTML = userData.email;
+    addressDisplayElem.innerHTML = userData.address;
+    summaryDisplayElem.innerHTML = userData.summary;
+    domainDisplayElem.innerHTML = userData.domain;
+    showListData(userData.projects,projectsDisplayElem) 
+    showListData(userData.achievements,achievementsDisplayElem)
+    showListData(userData.experience,experienceDisplayElem)
+    showListData(userData.education,educationDisplayElem)
+    showListData(userData.skills,skillsDisplayElem)
+}
 const generateCV = () => {
     let userData = getUserInputs();
-    
+    displayCV(userData);
+
 }

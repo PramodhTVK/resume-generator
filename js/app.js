@@ -81,7 +81,7 @@ const getUserInputs = () =>{
     eduDescriptionElem = document.querySelectorAll('.edu_description');
 
     let projectTitleElem = document.querySelectorAll('.proj_title');
-    let projectLinkElem = document.querySelectorAll('.proj-link');
+    let projectLinkElem = document.querySelectorAll('.proj_link');
     let projectDescElem = document.querySelectorAll('.proj_description');
 
     let skillTitleElem = document.querySelectorAll('.skill');

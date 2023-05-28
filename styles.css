@@ -434,16 +434,21 @@ textarea{
     font-size: 1.6rem;
 }
 
+/* preview section*/
 .preview-cnt{
     border-radius: 5px;
     display: grid;
     grid-template-columns: 32% auto;
-    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     overflow: hidden;
 }
 
-.preview-cnt{
+.preview-cnt-l{
     padding: 3rem 3rem 2rem 3rem;
+}
+
+.preview-cnt-r{
+    padding: 3rem 3rem 3rem 4rem;
 }
 
 .preview-cnt-l .preview-blk:nth-child(1){
@@ -455,8 +460,8 @@ textarea{
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .preview-image img{
@@ -478,7 +483,7 @@ textarea{
     bottom: -10px;
     width: 50px;
     height: 1.5px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -491,7 +496,7 @@ textarea{
 .preview-blk-title h3{
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: 0.5px solid rgba(0,0,0,0.8);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     padding-bottom: 0.5rem;
 }
 

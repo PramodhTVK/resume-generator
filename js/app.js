@@ -120,7 +120,6 @@ const getUserInputs = () =>{
         firstname: firstNameElem.value,
         middlename: middleNameElem.value,
         lastname: lastNameElem.value,
-        image: imageElem.value,
         domain: domainElem.value,
         address: addressElem.value,
         email: emailElem.value,
@@ -225,6 +224,7 @@ function previewImg(){
         //assign the dataURL to src of the imageElement
     }
 }
+
 
 function printCV(){
     window.print();

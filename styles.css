@@ -517,3 +517,95 @@ textarea{
 .preview-cnt-r .preview-blk-list .preview-item{
     margin-top: 1.8rem;
 }
+
+.achievements-items.preview-blk-list .preview-item span:first-child,
+.education-items.preview-blk-list .preview-item span:first-child,
+.experience-items.preview-blk-list .preview-item span:first-child{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background-color: rgba(0,0,0,0.3);
+}
+/*selects the first child of each repeater division*/
+.education-items.preview-blk-list .preview-item span:nth-child(2),
+.experience-items.preview-blk-list .preview-item span:nth-child(2){
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.education-items.preview-blk-list .preview-item span:nth-child(3),
+.experience-items.preview-blk-list .preview-item span:nth-child(3){
+    font-style: italic;
+    margin-right: 1rem;
+}
+
+.education-items.preview-blk-list .preview-item span:nth-child(4),
+.education-items.preview-blk-list .preview-item span:nth-child(5),
+.experience-items.preview-blk-list .preview-item span:nth-child(4),
+.experience-items.preview-blk-list .preview-item span:nth-child(5){
+    margin-right: 1rem;
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+    padding: 0 1rem;
+    border-radius: 0.6rem;
+}
+
+.education-items.preview-blk-list .preview-item span:nth-child(6),
+.experience-items.preview-blk-list .preview-item span:nth-child(6){
+    font-size: 13.5px;
+    display: block;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+.projects-items.preview-blk-list .preview-item span{
+    display: block;
+}
+
+@media screen and (min-width: 768px){
+    .cols-3{
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+    .cols-2{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .cv-form-row{
+        padding: 3rem 3rem 0rem 3rem;
+    }
+    .cols-3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.print-btn-sc{
+    margin: 2rem 0 6rem 0;
+}
+
+/*print-section*/
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .non_print_area {
+        display: none;
+    }
+
+    .print_area, .print_area * {
+        visibility: visible;
+    }
+
+    .print_area {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+    }
+}
+
+
